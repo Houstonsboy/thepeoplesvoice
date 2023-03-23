@@ -11,6 +11,7 @@
             background-color: black;
             color:#00BFFF;
             text-align:center;
+          
             
         }
         h1{
@@ -21,10 +22,12 @@
             margin:20px;
             font-size:16px;
         }
+       
         </style>
        </head>
      <body>
      <h1 id="title">{{config('app.name')}}</h1>
+    
         @yield('content')
 
      </body>

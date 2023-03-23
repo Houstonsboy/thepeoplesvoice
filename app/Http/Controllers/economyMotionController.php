@@ -12,9 +12,9 @@ class economyMotionController extends Controller
      */
     public function index()
     {
-        $economy = EconomyMotion::all(); //fetch all blog posts from DB
+        $Economy = EconomyMotion::all(); //fetch all blog posts from DB
         return view('Economy.index', [
-            'Economy' => $economy,
+            'Economy' => $Economy,
         ]);
     }
 

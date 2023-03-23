@@ -10,7 +10,7 @@
 
 <p>Below are sectors</p>
 
-    <ol>
+    <ul class="sectors">
     <li>
         <img class="politicsimg" src="{{ asset('images\marco-oriolesi-wqLGlhjr6Og-unsplash.jpg') }}" />
         <div class="politics">
@@ -18,19 +18,19 @@
         </div>
     </li>
     <li>
-        <img class="infrastructureimg" src="{{ asset('images\marco-oriolesi-wqLGlhjr6Og-unsplash.jpg') }}" />
+        <img class="infrastructureimg" src="{{ asset('images\troy-mortier-eKY6_9W_iqY-unsplash.jpg') }}" />
         <div class="Infrastructure">
             <a href="/infrastructure" class="button-89" >Infrastructure</a>
         </div>
     </li>
     <li>
-        <img class="economyimg" src="{{ asset('images\marco-oriolesi-wqLGlhjr6Og-unsplash.jpg') }}" />
+        <img class="economyimg" src="{{ asset('images\andre-taissin-5OUMf1Mr5pU-unsplash.jpg') }}" />
         <div class="economy">
             <a href="/economy" class="button-89" >Economy</a>
         </div>
     </li>
-</ol>
-<a href="/infrastructure/create">Submit your own petition</a>
+</ul>
+<a href="create/infrastructure">Submit your own petition</a>
 
     
 
@@ -82,12 +82,13 @@
   color: #fff;
 }
 
-ol {
+ul {
      /* Remove default bullet points */
     display: flex; /* Display list items in a horizontal row */
     flex-wrap:wrap; /* Prevent items from wrapping to the next row */
     padding: 0; /* Remove default padding */
     margin-left:20px;
+    list-style:none;
     margin-top:50px;
   }
   li {

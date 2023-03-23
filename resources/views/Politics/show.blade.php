@@ -10,7 +10,7 @@
 <ul class="the-buttons">
 <li>
 <p class="Approve" id="approve-count">{!!$Politics->Approve!!}</p>
-<button class="button-49" role="button" onclick="addApprove()"><a href="{{$Politics->id}}">Approve</a></button>
+<button class="button-49" role="button" >Approve</button>
 </li>
 <li>
 <p class="DisApprove">{!!$Politics->DisApprove !!}</p>
@@ -19,17 +19,6 @@
 </ul>
 </form>
 </div>
-<script>
-function addApprove() {
-  // Get the current count of Approve
-  var approveCount = parseInt(document.getElementById("approve-count").innerHTML);
-  // Add 1 to the count
-  approveCount++;
-
-  // Update the value of {!!$Politics->Approve!!} in the DOM
-  var approveElement = document.querySelector('.Approve');
-  approveElement.innerHTML = approveCount.toString();
-}
 
 
 
@@ -57,10 +46,11 @@ function addApprove() {
         color:#FF0000;
     }
     .the-buttons{
-        display:flex;
+      display:flex;
         list-style:none;
         margin-left:50px;
-        margin:right:50px;
+        margin-right:50px;
+        text-align:center;
         
     }
 button{

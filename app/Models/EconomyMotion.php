@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class EconomyMotion extends Model
 {
     protected $table = '_economy_motions';
+    protected $fillable = ['motion', 'Description', 'Approve','DisApprove'];
 }

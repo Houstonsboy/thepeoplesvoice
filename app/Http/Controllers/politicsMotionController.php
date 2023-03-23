@@ -23,7 +23,7 @@ class politicsMotionController extends Controller
      */
     public function create()
     {
-        //
+        return view('Politics.create');
     }
 
     /**
@@ -31,7 +31,12 @@ class politicsMotionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newMotion = PoliticsMotion::create([
+            'motion' => $request->motion,
+            'Description' => $request->Description,
+            'Approve' =>0,
+            'DisApprove' =>0,
+        ]);
     }
 
     /**
@@ -57,12 +62,7 @@ class politicsMotionController extends Controller
      */
     public function update(Request $request, PoliticsMotion $politicsMotion)
     {
-        $politicsMotion->update([
-            'Approve' => $request->Approve,
-            
-        ]);
-
-        return redirect('Politics/' . $blogPost->id);
+        
     }
 
     /**

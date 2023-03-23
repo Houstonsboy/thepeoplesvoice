@@ -30,7 +30,13 @@ class InfrastructureMotionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newMotion = InfrastructureMotion::create([
+            'motion' => $request->motion,
+            'Description' => $request->Description,
+            'Approve' =>0,
+            'DisApprove' =>0,
+        ]);
+        return redirect('infrastructure/' . $newMotion->id);
     }
 
     /**
@@ -39,7 +45,7 @@ class InfrastructureMotionsController extends Controller
     public function show(InfrastructureMotion $infrastructureMotion)
     {
         return view('Infrastructure.show', [
-            'Motion' => $infrastructureMotion,]);
+            'Infrastructure' => $infrastructureMotion,]);
     }
 
     /**
