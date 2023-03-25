@@ -17,7 +17,10 @@ use App\Models\EconomyMotion;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
+});
+ Route::get('/login', function () {
+    return view('auth.login');
 });
 
 Route::get('/monthlyMotions', [\App\Http\Controllers\monthlyMotionsController::class, 'index']);
@@ -37,3 +40,18 @@ Route::get('/create/politics', [\App\Http\Controllers\politicsMotionController::
 
 Route::post('/create/politics',[\App\Http\Controllers\politicsMotionController::class, 'store']);
 Route::post('/create/infrastructure', [\App\Http\Controllers\InfrastructureMotionsController::class, 'store']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/dashboard', function () {
+    return view('welcome');
+});
+
+Route::post('/politics/thankyou', [\App\Http\Controllers\politicsMotionController::class, 'update']);
+

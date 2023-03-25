@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-<h1>Politics</h1>
+<h1 class="PoliticsHead">Politics</h1>
 <div class="Politicsindex">
-<p>Below are this months politics-related motions. issues involving the governship of the republic of Kenya and it people</p>
+<p id="politicsexplained">Below are this months politics-related motions. issues involving the governship of the republic of Kenya and it people</p>
 <div class="Politics">
     
 @forelse($Politics as $Politic)
                     <ul>
-                        <li><a href="./politics/{{ $Politic->id }}">{{ ucfirst($Politic->motion) }}</a></li>
+                        <li><a id="politicsmotions"href="./politics/{{ $Politic->id }}">{{ ucfirst($Politic->motion) }}</a></li>
                     </ul>
                 @empty
                     
@@ -41,8 +41,18 @@
     .Politics {
         text-align: center;
     }
+    #politicsexplained{
+        font-size:30px;
+    }
+    .PoliticsHead{
+        color:green;
+        text-decoration-line: underline;
+    }
     .Politicsindex{
         padding:100px 100px;
+    }
+    #politicsmotions{
+        font-size:22px;
     }
 </style>
 

@@ -4,25 +4,60 @@
 <div class="body">
 <h1 class="motion">{!!$Politics->motion !!} </h1>
 <p>{!!$Politics->Description!!}</p>
-<form action="" method="POST">
-                        @csrf
-                        @method('PUT')
+
 <ul class="the-buttons">
 <li>
+
 <p class="Approve" id="approve-count">{!!$Politics->Approve!!}</p>
-<button class="button-49" role="button" >Approve</button>
+
+
+<button id="ApproveButton">Approve</button>
+
+
 </li>
 <li>
 <p class="DisApprove">{!!$Politics->DisApprove !!}</p>
-<button class="button-57" role="button"><span class="text">Disapprove</span><span>Are you Sure</span></button>
+<button id="DisApproveButton">Disapprove</button>
 </li>
 </ul>
-</form>
+
 </div>
 
+<script>
+ 
+
+    
+    / Select the button element by ID
+const approveButton = document.querySelector('#ApproveButton');
+
+// Add a click event listener to the button
+approveButton.addEventListener('click', () => {
+  // Get the current approve count from the <p> element
+  const approveCountElement = document.querySelector('#approve-count');
+  const approveCount = parseInt(approveCountElement.textContent);
+
+  // Increase the approve count by 1
+  const newApproveCount = approveCount + 1;
+
+  // Update the <p> element with the new approve count
+  approveCountElement.textContent = newApproveCount;
+
+  // Make an AJAX request to update the new approve count in the database
+  fetch('/politics/thankyou', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      newApproveCount: newApproveCount,
+    }),
+  });
+});
+   
+  </script>
 
 
-</script>
+
 
 <style>
     .body{

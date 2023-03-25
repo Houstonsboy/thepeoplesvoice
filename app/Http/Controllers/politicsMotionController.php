@@ -37,6 +37,7 @@ class politicsMotionController extends Controller
             'Approve' =>0,
             'DisApprove' =>0,
         ]);
+        return redirect('politics/' . $newMotion->id);
     }
 
     /**
@@ -62,7 +63,12 @@ class politicsMotionController extends Controller
      */
     public function update(Request $request, PoliticsMotion $politicsMotion)
     {
-        
+        $newApproveCount = $request->input('newApproveCount');
+        $politics = Politics::find($id);
+        $politics->Approve = $newApproveCount;
+        $politics->save();
+
+       
     }
 
     /**
